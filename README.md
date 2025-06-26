@@ -9,11 +9,13 @@ The goal is to reduce confusion, save time, and help users avoid rejected applic
 ## 🇲🇦 Why Wathi9a?
 
 Many Moroccans struggle with:
+
 - Not knowing the exact documents needed for paperwork.
 - Wasting time visiting offices without complete files.
 - Searching for reliable answers across outdated forums and Facebook posts.
 
 Wathi9a solves this by providing:
+
 - ✅ Step-by-step list of required documents.
 - 📍 Where to go to submit the file.
 - 💵 Estimated cost and waiting time.
@@ -28,7 +30,7 @@ Wathi9a solves this by providing:
 - 📄 Detailed page for each procedure with full info
 - 🌟 Favorite/save useful procedures using `localStorage`
 - 🌙 Dark mode support
-- 🇫🇷 Optional French/Arabic language switch *(coming soon)*
+- 🇫🇷 Optional French/Arabic language switch _(coming soon)_
 
 ---
 
@@ -48,3 +50,4 @@ git clone https://github.com/yourusername/wathi9a.git
 cd wathi9a
 npm install
 npm start
+```
