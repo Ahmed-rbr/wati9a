@@ -4,7 +4,8 @@ import { Route, BrowserRouter as Router, Routes, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import ProcedureDetails from "./pages/ProcedureDetails";
 import Fav from "./pages/Fav";
-import { Procedures } from "./data/Procedures";
+import ProceduresAll from "./pages/ProceduresAll";
+import Footer from "./components/Footer";
 const App = () => {
   return (
     <>
@@ -14,7 +15,9 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/الإجراءات/:id" element={<ProcedureDetails />} />
           <Route path="/مفضلة" element={<Fav />} />
+          <Route path="/الإجراءات" element={<ProceduresAll />} />
         </Routes>
+        <Footer />
       </Router>
     </>
   );

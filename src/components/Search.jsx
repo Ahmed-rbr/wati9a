@@ -2,13 +2,14 @@ import React from "react";
 
 const Search = () => {
   return (
-    <div className="flex justify-center gap-8 items-center  m-auto mb-8">
+    <div className="flex justify-center items-center gap-4 max-w-md mx-auto my-8 px-4">
       <input
         type="text"
-        className="w-86 rounded-xl focus:outline-0 border border-blue-300  p-2"
+        placeholder="ابحث عن إجراء..."
+        className="flex-grow rounded-xl border border-blue-300 px-4 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
       />
-      <button className="font-bold bg-blue-300 text-2xl text-white rounded-2xl px-6 py-3  hover:cursor-pointer hover:bg-blue-600 transition-all duration-150 hover:scale-110">
-        اكتشف{" "}
+      <button className="bg-blue-500 text-white font-bold rounded-2xl px-8 py-3 text-lg hover:bg-blue-700 hover:scale-105 transition-transform duration-200 shadow-md">
+        اكتشف
       </button>
     </div>
   );

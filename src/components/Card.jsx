@@ -3,14 +3,18 @@ import { Link } from "react-router-dom";
 
 const Card = ({ title, category, id }) => {
   return (
-    <div className="flex flex-col p-4 rounded-2xl relative shadow-2xl bg-blue-300 hover:scale-110 ">
-      <h1 className="font-bold text-xl text-white my-6">{title}</h1>
-      <p className="left-0 top-0 absolute font-medium text-white rounded bg-red-400 p-2">
+    <div className="relative flex flex-col justify-between p-6 rounded-3xl bg-gradient-to-tr from-blue-500 to-blue-300 shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out">
+      <span className="absolute top-4 left-4 bg-red-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md uppercase tracking-wide">
         {category}
-      </p>
+      </span>
+
+      <h2 className="mt-8 mb-6 text-white text-2xl font-extrabold drop-shadow-lg">
+        {title}
+      </h2>
+
       <Link
         to={`/الإجراءات/${id}`}
-        className="px-6 rounded-2xl bg-green-200 hover:scale-105 hover:cursor-pointer py-3"
+        className="self-start bg-green-400 text-green-900 font-semibold rounded-xl px-8 py-3 hover:bg-green-500 hover:text-white transition-colors duration-300 shadow-md hover:shadow-xl transform hover:scale-105"
       >
         عرض التفاصيل
       </Link>
