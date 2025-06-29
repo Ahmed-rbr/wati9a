@@ -1,5 +1,5 @@
 import React from "react";
-
+import Select from "./Select";
 const Search = ({
   onChange,
   value,
@@ -17,17 +17,9 @@ const Search = ({
         className="flex-grow rounded-xl border border-blue-300 px-4 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-blue-400 transition w-full sm:w-auto"
       />
 
-      <select
-        value={categoryValue}
-        onChange={onCategoryChange}
-        className="rounded-xl border border-blue-300 px-4 py-3 text-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-400 transition w-full sm:w-auto"
-      >
-        <option value="">جميع الفئات</option>
-        <option value="الهوية">الهوية</option>
-        <option value="الزواج">الزواج</option>
-        <option value="CNSS">CNSS</option>
-        <option value="السكن">السكن</option>
-      </select>
+      <div className="w-full sm:w-auto max-w-xs">
+        <Select value={categoryValue} onChange={onCategoryChange} />
+      </div>
 
       <button
         onClick={onClick}

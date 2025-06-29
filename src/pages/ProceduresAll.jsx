@@ -6,8 +6,8 @@ import Card from "../components/Card";
 const ProceduresAll = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [category, setCategory] = useState("");
-  const handleCategoryChange = (e) => {
-    setCategory(e.target.value);
+  const handleCategoryChange = (value) => {
+    setCategory(value);
   };
 
   const [favs, setFavs] = useState(() => {
@@ -34,8 +34,8 @@ const ProceduresAll = () => {
   });
 
   return (
-    <div className="flex flex-col items-center w-full px-4 py-6">
-      <div className="w-full max-w-6xl">
+    <div className="flex min-h-screen flex-col items-center w-full px-4 py-6">
+      <div className="w-full flex-grow max-w-6xl">
         <Search
           value={searchTerm}
           onChange={handleSearch}

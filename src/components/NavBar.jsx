@@ -17,7 +17,7 @@ const NavBar = () => {
             <Link to="/">الصفحة الرئيسية</Link>
           </li>
           <li>
-            <Link to="/الإجراءات">أبرز الإجراءات</Link>
+            <Link to="/الإجراءات">جميع الإجراءات</Link>
           </li>
           <li>
             <Link to="/مفضلة">مفضلة</Link>

@@ -18,8 +18,8 @@ const Fav = () => {
   const favProcedures = Procedures.filter((p) => favs.includes(p.id));
 
   return (
-    <div className="flex flex-col items-center w-full px-4 py-6">
-      <div className="w-full max-w-6xl">
+    <div className="flex min-h-screen flex-col items-center w-full px-4 py-6">
+      <div className="w-full flex-grow max-w-6xl">
         <h1 className="text-2xl font-bold text-blue-900 text-center mb-8">
           📌 المفضلة
         </h1>
