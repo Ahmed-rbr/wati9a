@@ -9,9 +9,10 @@ const App = () => {
   return (
     <>
       <Router>
+        <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/الإجراءات" element={<ProcedureDetails />} />
+          <Route path="/الإجراءات/:id" element={<ProcedureDetails />} />
           <Route path="/مفضلة" element={<Fav />} />
         </Routes>
       </Router>
