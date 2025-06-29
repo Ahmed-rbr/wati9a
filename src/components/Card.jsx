@@ -1,12 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Heart } from "lucide-react";
 
-const Card = ({ title, category, id }) => {
+const Card = ({ title, onClick, favo, category, id }) => {
   return (
     <div className="relative flex flex-col justify-between p-6 rounded-3xl bg-gradient-to-tr from-blue-500 to-blue-300 shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out">
       <span className="absolute top-4 left-4 bg-red-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md uppercase tracking-wide">
         {category}
       </span>
+      <Heart
+        onClick={onClick}
+        className={`w-6 h-6 absolute top-4 right-4 ${
+          favo ? "fill-red-500" : ""
+        } text-red-500 cursor-pointer transition-transform duration-200 hover:scale-110`}
+      />
 
       <h2 className="mt-8 mb-6 text-white text-2xl font-extrabold drop-shadow-lg">
         {title}

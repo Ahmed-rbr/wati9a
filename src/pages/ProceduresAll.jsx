@@ -5,24 +5,46 @@ import Card from "../components/Card";
 
 const ProceduresAll = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [category, setCategory] = useState("");
+  const handleCategoryChange = (e) => {
+    setCategory(e.target.value);
+  };
+
+  const [favs, setFavs] = useState(() => {
+    return JSON.parse(localStorage.getItem("favo")) || [];
+  });
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value.toLowerCase().trim());
   };
 
-  const filteredProcedures = Procedures.filter((procedure) =>
-    procedure.title.toLowerCase().includes(searchTerm)
-  );
+  const handleFavo = (id) => {
+    const updated = favs.includes(id)
+      ? favs.filter((fid) => fid !== id)
+      : [...favs, id];
+
+    setFavs(updated);
+    localStorage.setItem("favo", JSON.stringify(updated));
+  };
+
+  const filteredProcedures = Procedures.filter((procedure) => {
+    const matchesText = procedure.title.toLowerCase().includes(searchTerm);
+    const matchesCategory = category ? procedure.category === category : true;
+    return matchesText && matchesCategory;
+  });
 
   return (
     <div className="flex flex-col items-center w-full px-4 py-6">
       <div className="w-full max-w-6xl">
         <Search
           value={searchTerm}
+          onChange={handleSearch}
           onClick={() => {
             setSearchTerm("");
+            setCategory("");
           }}
-          onChange={handleSearch}
+          onCategoryChange={handleCategoryChange}
+          categoryValue={category}
         />
 
         <div className="grid gap-6 mt-12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -33,6 +55,8 @@ const ProceduresAll = () => {
                 category={procedure.category}
                 title={procedure.title}
                 id={procedure.id}
+                favo={favs.includes(procedure.id)}
+                onClick={() => handleFavo(procedure.id)}
               />
             ))
           ) : (

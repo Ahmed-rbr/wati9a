@@ -1,11 +1,24 @@
-import React from "react";
-import Search from "../components/Search";
+import React, { useState } from "react";
 import { Procedures } from "../data/Procedures";
 import Card from "../components/Card";
 import { Link } from "react-router-dom";
+
 const Home = () => {
+  const [favs, setFavs] = useState(() => {
+    return JSON.parse(localStorage.getItem("favo")) || [];
+  });
+
+  const handleFavo = (id) => {
+    const updated = favs.includes(id)
+      ? favs.filter((fid) => fid !== id)
+      : [...favs, id];
+
+    setFavs(updated);
+    localStorage.setItem("favo", JSON.stringify(updated));
+  };
+
   return (
-    <div className="flex flex-col  mt-6 justify-center items-center m-auto w-4/5">
+    <div className="flex flex-col mt-6 justify-center items-center m-auto w-4/5">
       <div className="w-full bg-gradient-to-r from-blue-600 to-blue-400 py-12 mb-10 rounded-3xl shadow-lg text-center text-white">
         <h1 className="text-4xl font-extrabold mb-4 drop-shadow-lg">
           وثيقة – دليلك البسيط للإجراءات الإدارية المغربية
@@ -23,6 +36,8 @@ const Home = () => {
             category={procedure.category}
             title={procedure.title}
             id={procedure.id}
+            favo={favs.includes(procedure.id)}
+            onClick={() => handleFavo(procedure.id)}
           />
         ))}
       </div>
